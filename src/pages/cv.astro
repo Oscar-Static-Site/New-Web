@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+
+import PageLayout from "@/layouts/Base";
+
+const meta = {
+	title: "CV",
+	description: "Page containing my CV",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+     <h1 class="text-xl text-center">Oscar Aranega Sebastia</h1>
+    <h2 class="text-xl text-center">DevOps Engineer</h2>
+    <div class="flex justify-center" >
+
+    <p> Email: oscarsjlh@gmail.com ⋅ Phone: 07522076038 ⋅ <a href="https://github.com/oscarsjlh">GitHub</a> ⋅ <a href="https://www.linkedin.com/in/oscarsebastia/">LinkedIn</a></p>
+
+    </div>
+    <p class=>A <strong>DEVOPS</strong> engineer with 1 year of experience working in Technology. Well versed in helping teams deliver <strong>high-quality</strong> applications.</p>
+
+    <h2 class="text-2xl">Experience</h2>
+    <h3 class="font-semibold"> Natoora, London, UK</h3>
+    <p>March 2022 – Present: DevOps</p>
+    <ul class="list-disc space-y-2">
+        <li>Orchestrated and maintained GCP cloud infrastructure for a wide range of projects at Natoora, guaranteeing seamless development, testing, and production operations.
+        </li>
+        <li>Lead the seamless migration of workflows from docker-based environments to Kubernetes, leveraging GKE managed clusters to enable zero downtime deployments and enhance overall system reliability for Natoora.</li>
+        <li>Implemented and maintained Git Ops principles with Argo CD and Helm templates to automate the management of Kubernetes environments at Natoora.</li>
+        <li>Improved CI/CD workflows by leveraging GitHub Actions and TeamCity, resulting in faster build times. This optimization facilitated more comprehensive testing and accelerated the developer feedback cycle for enhanced productivity</li>
+        <li>.Implemented and the adoption of Prometheus and Grafana for real-time monitoring at Natoora, customizing dashboards and alerts to ensure maximum uptime and efficient issue resolution</li>
+        <li>Developed and maintained robust automation solutions and developer tools using Bash, Python, and Go scripting languages, significantly improving development workflows and enhancing overall efficiency for Natoora's DevOps team.</li>
+    </ul>
+
+    <h2 class="text-2xl">Certificates</h2>
+    <ul class="list-disc space-y-2">
+        <li>CompTIA A+ Certificate 2022</li>
+        <li>CompTIA Network+ Certificate 2022</li>
+        <li>Google Cloud Professional Cloud Architect 2023</li>
+        <li>Kubernetes Certified Administrator 2023</li>
+    </ul>
+
+    <h2 class="text-2xl">Projects</h2>
+    <ul class="list-disc space-y-2">
+        <li>Cloud Resume: <br> Create a static website hosted on AWS S3 Storage bucket, with DNS on route 53, and implemented an API to track the number of visitors.
+        </li>
+     <li>Todo App: <br>Developed and deployed the Todo app using GO and HTMX, hosted on EKS. Utilized ECR for container registry, RDS, and Terraform for infrastructure management. Automated the deployment process with GitHub Actions, ArgoCD, and Helm templates.
+        </li>
+    </ul>
+
+    <h2 class="center">Skills</h2>
+    <ul>
+        <li>Cloud: AWS, GCP</li>
+        <li>Programming: Go, Python, Bash</li>
+        <li>Containers: Docker, Kubernetes, Podman, Helm.</li>
+        <li>IaC: Terraform, Ansible, Packer</li>
+        <li>OS: Linux</li>
+        <li>Tools: Vim, Git, Github, Nginx.</li>
+        <li>CI/CD: Github Actions Cloud Build, Teamcity, ArgoCD.</li>
+        <li>Monitoring: Prometheus, Grafana</li>
+        <li>Networking: TCP/IP, DNS, Load Balancer</li>
+    </ul>
+</PageLayout>
