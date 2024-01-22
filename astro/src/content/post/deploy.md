@@ -2,7 +2,7 @@
 title: "Deploying a 3 tier app in AWS with Terraform"
 description: 'Deploying a 3 tier app in aws using terraform kuberntes and ArgoCd'
 publishDate: 'Dec 15 2023'
-tags: ["eks", "terraform", "argocd", "helm"]
+tags: ["eks", "hcl", "argocd", "helm"]
 ---
 
 # Deploying a 3 tier app with terraform using AWS.
@@ -22,10 +22,10 @@ We will need:
 
 For this I made use the module provided by aws to make things simpler.
 
-``` terraform
+``` hcl
 
 module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
+  source  = "hcl-aws-modules/vpc/aws"
   version = "5.4.0"
 
   name                 = "todo-vpc"
@@ -50,10 +50,10 @@ module "vpc" {
 
 ### Once we have this we need our cluster again we use AWS modules for this:
 
-``` terraform
+``` hcl
 
 module "eks" {
-  source  = "terraform-aws-modules/eks/aws"
+  source  = "hcl-aws-modules/eks/aws"
   version = "~> 19.0"
 
   cluster_name    = local.cluster_name
@@ -97,7 +97,7 @@ module "eks" {
 First of all, we need to generate a random pass for the db, and then store it in AWS secert's manager
 If we wanted better separation we could create another vpc for the db and then link them together with [VPC peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html)
 
-``` terraform
+``` hcl
 
 resource "random_password" "todo-pass" {
   length           = 16
@@ -146,7 +146,7 @@ resource "aws_db_instance" "todo-db" {
 
 ### Finally we need an aws security group to allow traffic from k8s to the DB
 
-``` terraform
+``` hcl
 
 resource "aws_security_group_rule" "todo-db" {
   type                     = "ingress"

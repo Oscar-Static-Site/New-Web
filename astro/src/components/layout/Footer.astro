@@ -2,6 +2,7 @@
 import { menuLinks, siteConfig } from "@/site-config";
 
 const year = new Date().getFullYear();
+
 ---
 
 <footer
@@ -11,6 +12,8 @@ const year = new Date().getFullYear();
 		Copyright &copy; {year}{" "}
 		{siteConfig.author}
 	</div>
+  <div id="counter">
+  </div>
 	<nav
 		aria-label="More on this site"
 		class="flex gap-x-2 sm:gap-x-0 sm:divide-x sm:divide-gray-500"
@@ -27,3 +30,26 @@ const year = new Date().getFullYear();
 		}
 	</nav>
 </footer>
+
+
+<script>
+  const updateCounter = async () => {
+    try {
+      const countElement = document.getElementById('counter');
+
+      if (!countElement) {
+        console.error('Counter element not found');
+        return;
+      }
+
+      const response = await fetch('https://nmker3heyctz3cmxaj4vqnkqeu0hpusy.lambda-url.eu-west-2.on.aws/');
+      const data = await response.json();
+
+      countElement.innerHTML = `Visitor Number: ${data}`;
+    } catch (error) {
+      console.error('Error updating counter:', error);
+    }
+  };
+
+    updateCounter();
+</script>

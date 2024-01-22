@@ -20,12 +20,12 @@ I chose the later:
 
 First we need to set up a GitHub org [info](https://github.com/topics/github-organization).
 
-Second we will need some terraform code to link both things together
+Second we will need some hcl code to link both things together
 
 
 First we need a ECR repository.
 
-``` terraform
+``` hcl
 
 resource "aws_ecr_repository" "repository" {
   name = var.name
@@ -34,7 +34,7 @@ resource "aws_ecr_repository" "repository" {
 
 Second we will need to give permissions to push to the repo:
 
-``` terraform
+``` hcl
 
 data "aws_iam_policy_document" "github_actions" {
   statement {
@@ -90,7 +90,7 @@ data "aws_iam_policy_document" "github_actions_assume_role" {
 
 And once we have that the link with AWS:
 
-``` terraform
+``` hcl
 
 resource "aws_iam_openid_connect_provider" "github" {
   url             = "https://token.actions.githubusercontent.com"
