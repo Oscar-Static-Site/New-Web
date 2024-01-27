@@ -23,7 +23,7 @@ jobs:
       - name: setup AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/github-actions-Oscar-Static-Site-Web
+          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/github-actions-Oscar-Static-Site-New-Web
           aws-region: ${{ env.AWS_REGION }}
       - name: Install modules
         run: npm ci
