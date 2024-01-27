@@ -6,6 +6,5 @@ tags: ["astro", "js"]
 
 ---
 
-## First dragt
 trigger
 
