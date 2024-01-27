@@ -12,7 +12,7 @@ variable "bucket_name" {
 }
 
 variable "organization" {
-  default = "Oscar-Static_Site"
+  default = "Oscar-Static-Site"
 }
 variable "name" {
   default = "New-Web"

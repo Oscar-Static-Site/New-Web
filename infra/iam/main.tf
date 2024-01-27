@@ -16,7 +16,7 @@ data "aws_iam_policy_document" "github_actions_assume_role" {
     actions = ["sts:AssumeRoleWithWebIdentity"]
     principals {
       type        = "Federated"
-      identifiers = ["token.actions.githubusercontent.com"]
+      identifiers = ["arn:aws:iam::477601539816:oidc-provider/token.actions.githubusercontent.com"]
     }
     condition {
       test     = "StringLike"
