@@ -15,5 +15,5 @@ variable "organization" {
   default = "Oscar-Static_Site"
 }
 variable "name" {
-  default = "Web"
+  default = "New-Web"
 }
