@@ -29,6 +29,12 @@ jobs:
           role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/github-actions-Oscar-Static-Site-New-Web
           aws-region: ${{ env.AWS_REGION }}
       - name: Install modules
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install packages
         run: npm install
       - name: Build application
         run: npm run build
