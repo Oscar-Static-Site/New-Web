@@ -3,17 +3,17 @@ variable "region" {
 }
 
 variable "cloudfront_arn" {
-  default = ""
+  default = "arn:aws:cloudfront::477601539816:distribution/E2W8PB3I3382OR"
 
 }
 
 variable "bucket_name" {
-  default = ""
+  default = "oscarcorner.com"
 }
 
 variable "organization" {
-  default = ""
+  default = "Oscar-Static_Site"
 }
 variable "name" {
-  default = ""
+  default = "Web"
 }

@@ -10,19 +10,13 @@ provider "aws" {
 }
 
 
-resource "aws_iam_openid_connect_provider" "github" {
-  url             = "https://token.actions.githubusercontent.com"
-  client_id_list  = ["sts.amazonaws.com"]
-  thumbprint_list = ["a031c46782e6e6c662c2c87c76da9aa62ccabd8e"]
-}
-
 
 data "aws_iam_policy_document" "github_actions_assume_role" {
   statement {
     actions = ["sts:AssumeRoleWithWebIdentity"]
     principals {
       type        = "Federated"
-      identifiers = [aws_iam_openid_connect_provider.github.id]
+      identifiers = ["token.actions.githubusercontent.com"]
     }
     condition {
       test     = "StringLike"
@@ -49,20 +43,18 @@ data "aws_iam_policy_document" "pushtos3" {
     ]
     resources = [
       var.cloudfront_arn,
-      "arn:aws:s3:::${var.bucket_name}/*",
-      "arn:aws:s3:::${var.bucket_name}",
+      "arn:aws:s3:::oscarcorner.com/*",
+      "arn:aws:s3:::oscarcorner.com/*",
     ]
     sid = "VisualEditor0"
   }
 }
-
 resource "aws_iam_policy" "pushtos3" {
   name   = "pushtos3"
   policy = data.aws_iam_policy_document.pushtos3.json
 }
 
 resource "aws_iam_role_policy_attachment" "pushtos3" {
-  role       = aws_iam_policy.pushtos3.name
+  role       = aws_iam_role.github_actions.name
   policy_arn = aws_iam_policy.pushtos3.arn
-
 }
