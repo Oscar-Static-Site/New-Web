@@ -29,7 +29,7 @@ jobs:
           role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/github-actions-Oscar-Static-Site-New-Web
           aws-region: ${{ env.AWS_REGION }}
       - name: Install modules
-        run: npm ci
+        run: npm install
       - name: Build application
         run: npm run build
       - name: Deploy to S3
