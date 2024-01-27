@@ -3,7 +3,7 @@ variable "region" {
 }
 
 variable "cloudfront_arn" {
-  default = "arn:aws:cloudfront::477601539816:distribution/E2W8PB3I3382OR"
+  default = "arn:aws:cloudfront::477601539816:distribution/EDG2YX68Q8Y9R"
 
 }
 
