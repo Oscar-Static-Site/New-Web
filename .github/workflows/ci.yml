@@ -14,6 +14,9 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./astro
     permissions:
       id-token: write
       contents: write
