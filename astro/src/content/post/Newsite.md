@@ -11,4 +11,7 @@ We have a new look, much cleaner and easier to read in my opinion, there where a
 
 And it makes me work a bit on my JS, Html skills, even if I used a theme Astro Cactus.
 
+The changes and the migration was quite easy as still uses md files for the content and they can be easily moved.
+
+The ci, is quite simple for it as we still use s3 + cloudfront for the distribution of it.
 

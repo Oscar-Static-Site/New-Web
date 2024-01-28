@@ -8,9 +8,9 @@ on:
 
 env:
   AWS_REGION: "eu-west-2"
-  BUCKET_ID: "oscarcorner.com"
+  BUCKET_ID: "www.oscarcorner.com"
   AWS_ACCOUNT_ID: "477601539816"
-  DISTRIBUTION_ID: "EDG2YX68Q8Y9R"
+  DISTRIBUTION_ID: "E2W8PB3I3382OR"
 jobs:
   deploy:
     runs-on: ubuntu-latest
