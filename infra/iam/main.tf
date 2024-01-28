@@ -43,8 +43,8 @@ data "aws_iam_policy_document" "pushtos3" {
     ]
     resources = [
       var.cloudfront_arn,
-      "arn:aws:s3:::oscarcorner.com/*",
-      "arn:aws:s3:::oscarcorner.com/*",
+      "arn:aws:s3:::www.oscarcorner.com/*",
+      "arn:aws:s3:::www.oscarcorner.com",
     ]
     sid = "VisualEditor0"
   }

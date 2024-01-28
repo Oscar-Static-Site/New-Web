@@ -15,3 +15,5 @@ The changes and the migration was quite easy as still uses md files for the cont
 
 The ci, is quite simple for it as we still use s3 + cloudfront for the distribution of it.
 
+Architecure diagram for the hosting of the website:
+ ![diagram](../../assets/s3diagram.png)
