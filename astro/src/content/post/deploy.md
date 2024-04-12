@@ -7,6 +7,7 @@ tags: ["eks", "hcl", "argocd", "helm"]
 
 # Deploying a 3 tier app with terraform using AWS.
 
+
 To deploy a 3 tier app (api + db), we're going to be using AWS eks service and Amazon RDS for the DB.
 
 All the code can be find in the following [repo](https://github.com/oscar-todo-app/todo-app) in the infra cluster folder.
