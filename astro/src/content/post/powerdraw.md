@@ -59,9 +59,9 @@ So now we need to convert the amount we are using to kwh and multiply by how muc
 
 If you want the code for the set up and hosting of it I have a repo for it.
 
-How the dashboard ended up looking:
 
-### Nice dashboard.
+
+### Finished product.
 
 ![dashboard](../../assets/dashboard.png)
 
