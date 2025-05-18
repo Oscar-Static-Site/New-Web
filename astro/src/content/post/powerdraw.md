@@ -22,20 +22,22 @@ Having a quick look that's what we're going to set up.
 
 ![Diagram](../../assets/power-draw.webp)
 
-
+### Set up of tools.
 - In order to set up nut i followed a couple articles:
 
-[First one](https://technotim.live/posts/NUT-server-guide/)
-[And](https://www.jeffgeerling.com/blog/2025/nut-on-my-pi-so-my-servers-dont-die)
+  - [First one](https://technotim.live/posts/NUT-server-guide/),
+  - [And](https://www.jeffgeerling.com/blog/2025/nut-on-my-pi-so-my-servers-dont-die)
 
 - Once I had that working I went to search for a prometheus exporter for the tool and good luck there was one ready for me to use (one day I should really build one and underestand it further).
 
-[This is the exproter I ended up using](https://github.com/HON95/prometheus-nut-exporter)
+  - [This is the exproter I ended up using](https://github.com/HON95/prometheus-nut-exporter)
 
 And one bit of prometheus exporting and we had data on to be seen!
 
 Now we need to now how much power we are drawing and how much it costs.
 
+
+###  Query magic
 Getting the avg power draw is a query away.
 
 ```
@@ -56,6 +58,12 @@ So now we need to convert the amount we are using to kwh and multiply by how muc
 ```
 
 If you want the code for the set up and hosting of it I have a repo for it.
+
+How the dashboard ended up looking:
+
+### Nice dashboard.
+
+![dashboard](../../assets/dashboard.png)
 
 Where I automate the deploy with ansible for all my systemd jobs, and docker compose files.
 
