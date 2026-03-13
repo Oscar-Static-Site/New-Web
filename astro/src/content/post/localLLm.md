@@ -1,6 +1,6 @@
 ---
 title: "Using llama cpp and opencode for local ai"
-description: 'Using llama cpp and opencode'
+description: 'Using llama cpp and opencode, for runing llms directly on the local machine'
 publishDate: '2026-03-13'
 ---
 
